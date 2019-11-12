@@ -51,7 +51,7 @@ func main(){
 	routes.HandleFunc("/", Home).Methods("GET")
 	routes.HandleFunc("/programming",Programming).Methods("GET")
 	routes.HandleFunc("/chuck",ChuckJokes).Methods("GET")
-	log.Println(http.ListenAndServe(":8081", routes))
+	log.Println(http.ListenAndServe(":80", routes))
 }
 
 func Home(w http.ResponseWriter, r *http.Request) {
