@@ -1,0 +1,117 @@
+{{define "base"}}
+<!doctype html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Raleway|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+           background-color: #AAB7B8;
+        }
+        .title{
+            font-family: 'Shadows Into Light', cursive;
+        }
+        .border1{
+            border-style: dashed;
+            border-color: burlywood;
+            text-align: center;
+            background-color: #fff;
+
+        }
+        p.border2{
+            text-align: center;
+            font-size: 32px;
+            padding: 12px;
+            font-family: 'Raleway', sans-serif;
+        }
+        .paragraph{
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button2
+        {background-color: #008CBA;}
+
+        .button2:hover {
+            background-color: #fff;
+            color: blue;
+        }
+
+        .refresh{
+            position: absolute;
+            top: 70%;
+            left: 45%;
+            text-align: center;
+            font-family: 'ZCOOL KuaiLe', cursive;
+            font-size: 24px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background: #f1f1f1;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .main {
+            padding: 16px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+    <script>
+        function refreshPage(){
+            window.location.reload();
+        }
+    </script>
+</head>
+<body>
+<div class="body">{{template "content" .}}</div>
+
+<div class="navbar">
+    <a href="/" class="active">Random Jokes</a>
+    <a href="/programming">Programming Jokes</a>
+    <a href="/chuck">Chuck Facts</a>
+</div>
+</body>
+
+</html>
+{{end}}
