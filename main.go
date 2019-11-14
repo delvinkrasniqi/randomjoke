@@ -48,13 +48,16 @@ type ChuckJoke struct {
 func main(){
 	routes := mux.NewRouter()
 
+	//Routat(paths)
 	routes.HandleFunc("/", Home).Methods("GET")
 	routes.HandleFunc("/programming",Programming).Methods("GET")
 	routes.HandleFunc("/chuck",ChuckJokes).Methods("GET")
-	log.Println(http.ListenAndServe(":80", routes))
+	log.Println(http.ListenAndServe(":8080", routes))
 }
 
+//Funksioni RandomJoke , faqja kryesore
 func Home(w http.ResponseWriter, r *http.Request) {
+	//API endpoint per randomjoke
 	resp,err:=http.Get("https://official-joke-api.appspot.com/random_joke")
 
 	if(err!=nil){
@@ -84,7 +87,9 @@ func Home(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//Funksioni per routen /programming
 func Programming(w http.ResponseWriter,r *http.Request){
+	//API endpoint per programming jokes
 	resp2,err:=http.Get("https://sv443.net/jokeapi/category/programming/")
 
 	if (err!=nil){
@@ -115,7 +120,9 @@ func Programming(w http.ResponseWriter,r *http.Request){
 
 }
 
+//Funksioni i rutes /chuck , chuck norris jokes/facts
 func ChuckJokes(w http.ResponseWriter , r *http.Request){
+	//API endpoint per chuckjokes
 	resp3,err:=http.Get("https://api.chucknorris.io/jokes/random")
 
 	if (err!=nil){

@@ -8,8 +8,14 @@
                 <p class="paragraph">{{.CodeJoke.Delivery}}</p>
         </div>
 
+        <!-- Skripte e javascript per refresh , e definuar ne base.gohtml-->
         <div class="refresh">
                 <button type="submit"  onClick="refreshPage()" class="button button2">NEW JOKE</button>
         </div>
-
+        <!--Navigation bar-->
+        <div class="navbar">
+                <a href="/">Random Jokes</a>
+                <a href="/programming" class="active">Programming Jokes</a>
+                <a href="/chuck">Chuck Facts</a>
+        </div>
 {{end}}

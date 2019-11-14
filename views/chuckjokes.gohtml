@@ -6,30 +6,15 @@
         <p class="border2">{{.ChuckJoke.Value}}</p>
         <hr>
     </div>
-<!--
-        <p>Retrieve a Chuck Norris joke from a given category </p>
-<form>
-        <select onChange="window.document.location.href=this.options[this.selectedIndex].value;">
-            <option value="animal">Animal</option>
-            <option value="career">Career</option>
-            <option value="celebrity">Celebrity</option>
-            <option value="dev">Dev</option>
-            <option value="explicit">Explicit</option>
-            <option value="fashion">Fashion</option>
-            <option value="food">Food</option>
-            <option value="history">History</option>
-            <option value="money">Money</option>
-            <option value="movie">Movie</option>
-            <option value="music">Music</option>
-            <option value="political">Political</option>
-            <option value="religion">Religion</option>
-            <option value="science">Science</option>
-            <option value="sport">Sport</option>
-            <option value="travel">Travel</option>
-        </select>
-    </form>-->
+    <!-- Skripte e javascript per refresh , e definuar ne base.gohtml-->
     <div class="refresh">
         <button type="submit"  onClick="refreshPage()" class="button button2">NEW JOKE</button>
+    </div>
+        <!--Navigation bar-->
+    <div class="navbar">
+        <a href="/">Random Jokes</a>
+        <a href="/programming">Programming Jokes</a>
+        <a href="/chuck" class="active">Chuck Facts</a>
     </div>
 
 {{end}}

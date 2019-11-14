@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f7974302-cfa7-481a-9618-8791abf164b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jokes.exe" beforeDir="false" afterPath="$PROJECT_DIR$/jokes.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/base.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/base.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/chuckjokes.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/chuckjokes.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/codejokes.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/codejokes.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.gohtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +56,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
