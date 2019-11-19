@@ -11,13 +11,16 @@ package main
 //Jokes Query:https://api.chucknorris.io/jokes/search?query={query}
 
 import (
+	"database/sql"
 	"encoding/json"
 	"github.com/gorilla/mux"
+	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"html/template"
 )
+
+var database *sql.DB
 
 type RandomJoke struct {
 	ID        int    `json:"id"`
@@ -45,35 +48,36 @@ type ChuckJoke struct {
 	Value      string        `json:"value"`
 }
 
-func main(){
+func main() {
+
 	routes := mux.NewRouter()
 
 	//Routat(paths)
 	routes.HandleFunc("/", Home).Methods("GET")
-	routes.HandleFunc("/programming",Programming).Methods("GET")
-	routes.HandleFunc("/chuck",ChuckJokes).Methods("GET")
+	routes.HandleFunc("/programming", Programming).Methods("GET")
+	routes.HandleFunc("/chuck", ChuckJokes).Methods("GET")
 	log.Println(http.ListenAndServe(":8080", routes))
 }
 
 //Funksioni RandomJoke , faqja kryesore
 func Home(w http.ResponseWriter, r *http.Request) {
 	//API endpoint per randomjoke
-	resp,err:=http.Get("https://official-joke-api.appspot.com/random_joke")
+	resp, err := http.Get("https://official-joke-api.appspot.com/random_joke")
 
-	if(err!=nil){
+	if err != nil {
 		log.Fatalln(err)
 	}
 	defer resp.Body.Close()
 
-	body,err:=ioutil.ReadAll(resp.Body)
-	if err!=nil {
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
 		log.Fatalln(err)
 	}
 	log.Println(string(body))
 
 	var randomjoke RandomJoke
 
-	json.Unmarshal(body,&randomjoke)
+	json.Unmarshal(body, &randomjoke)
 
 	var templates = template.Must(template.ParseFiles("views/home.gohtml", "views/base.gohtml"))
 	varmap := map[string]interface{}{
@@ -88,24 +92,24 @@ func Home(w http.ResponseWriter, r *http.Request) {
 }
 
 //Funksioni per routen /programming
-func Programming(w http.ResponseWriter,r *http.Request){
+func Programming(w http.ResponseWriter, r *http.Request) {
 	//API endpoint per programming jokes
-	resp2,err:=http.Get("https://sv443.net/jokeapi/category/programming/")
+	resp2, err := http.Get("https://sv443.net/jokeapi/category/programming/")
 
-	if (err!=nil){
+	if err != nil {
 		log.Fatalln(err)
 	}
 	defer resp2.Body.Close()
 
-	body,err:=ioutil.ReadAll(resp2.Body)
-	if err!=nil {
+	body, err := ioutil.ReadAll(resp2.Body)
+	if err != nil {
 		log.Fatalln(err)
 	}
 	log.Println(string(body))
 
 	var codejoke ProgrammingJoke
 
-	json.Unmarshal(body,&codejoke)
+	json.Unmarshal(body, &codejoke)
 
 	var templates = template.Must(template.ParseFiles("views/codejokes.gohtml", "views/base.gohtml"))
 	varmap := map[string]interface{}{
@@ -117,28 +121,27 @@ func Programming(w http.ResponseWriter,r *http.Request){
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
-
 }
 
 //Funksioni i rutes /chuck , chuck norris jokes/facts
-func ChuckJokes(w http.ResponseWriter , r *http.Request){
+func ChuckJokes(w http.ResponseWriter, r *http.Request) {
 	//API endpoint per chuckjokes
-	resp3,err:=http.Get("https://api.chucknorris.io/jokes/random")
+	resp3, err := http.Get("https://api.chucknorris.io/jokes/random")
 
-	if (err!=nil){
+	if err != nil {
 		log.Fatalln(err)
 	}
 	defer resp3.Body.Close()
 
-	body,err:=ioutil.ReadAll(resp3.Body)
-	if err!=nil {
+	body, err := ioutil.ReadAll(resp3.Body)
+	if err != nil {
 		log.Fatalln(err)
 	}
 	log.Println(string(body))
 
 	var chuckjoke ChuckJoke
 
-	json.Unmarshal(body,&chuckjoke)
+	json.Unmarshal(body, &chuckjoke)
 
 	var templates = template.Must(template.ParseFiles("views/chuckjokes.gohtml", "views/base.gohtml"))
 	varmap := map[string]interface{}{
@@ -150,6 +153,3 @@ func ChuckJokes(w http.ResponseWriter , r *http.Request){
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
-
-
-

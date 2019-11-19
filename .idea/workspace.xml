@@ -6,9 +6,6 @@
       <change beforePath="$PROJECT_DIR$/jokes.exe" beforeDir="false" afterPath="$PROJECT_DIR$/jokes.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/base.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/base.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chuckjokes.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/chuckjokes.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/codejokes.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/codejokes.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.gohtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +19,7 @@
   </component>
   <component name="ProjectId" id="1THdWbnNZoq6NAoHiyl9qc5Ezxe" />
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
@@ -29,10 +27,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Delvin\Documents\gocode\src\github.com\delvinkrasniqi\jokes\views" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Delvin\Documents\gocode\src\github.com\delvinkrasniqi\jokes\views" />
     </key>
   </component>
